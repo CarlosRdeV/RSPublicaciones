@@ -60,6 +60,12 @@
             <artifactId>lombok</artifactId>
             <scope>annotationProcessor</scope>
         </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.13.0</version> <!-- Asegúrate de usar la última versión compatible -->
+        </dependency>
+
     </dependencies>
 
     <build>

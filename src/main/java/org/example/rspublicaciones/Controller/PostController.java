@@ -5,6 +5,7 @@ import org.example.rspublicaciones.Entity.User;
 import org.example.rspublicaciones.Repository.PostRepository;
 import org.example.rspublicaciones.Repository.UserRepository;
 import org.example.rspublicaciones.Service.PostService;
+import org.example.rspublicaciones.dto.PostResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -52,15 +53,15 @@ public class PostController {
         return ResponseEntity.ok("Post created successfully");
     }
 
-    @GetMapping("/{postId}")
-    public ResponseEntity<?> getPost(@PathVariable Long postId) {
-        Optional<Post> postOptional = postRepository.findById(postId);
-        if (postOptional.isEmpty()) {
-            return ResponseEntity.notFound().build();
+    @GetMapping("/{id}")
+    public ResponseEntity<PostResponseDTO> getPostById(@PathVariable Long id) {
+        try {
+            return postService.getPostById(id)
+                    .map(ResponseEntity::ok)
+                    .orElse(ResponseEntity.notFound().build());
+        } catch (IOException e) {
+            return ResponseEntity.internalServerError().build();
         }
-
-        Post post = postOptional.get();
-        return ResponseEntity.ok(post);
     }
 }
 
