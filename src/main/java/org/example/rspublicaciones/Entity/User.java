@@ -13,5 +13,11 @@ public class User {
     private Long id;
 
     private String name;
+
+    private String employeeNumber;
+
+    private String email;
+
+    private String password;
 }
 

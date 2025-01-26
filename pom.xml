@@ -63,8 +63,21 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.13.0</version> <!-- Asegúrate de usar la última versión compatible -->
+            <version>2.14.0</version> <!-- Asegúrate de usar la última versión compatible -->
         </dependency>
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <version>3.0.2</version> <!-- Verifica si necesitas una versión más reciente -->
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>8.0.0.Final</version> <!-- Asegúrate de usar la versión más reciente o compatible -->
+        </dependency>
+
+
+
 
     </dependencies>
 
